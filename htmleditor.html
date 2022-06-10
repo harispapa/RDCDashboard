@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Page Info -->
+    <meta charset="utf-8">
+    <title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>
+
+    <!-- Site favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./vendors/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./vendors/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./vendors/images/favicon-16x16.png">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="./vendors/styles/core.css">
+    <link rel="stylesheet" type="text/css" href="./vendors/styles/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="./vendors/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="./rdc/css/app.css">
+</head>
+<body>
+<div class="pre-loader">
+    <div class="pre-loader-box">
+        <div class="loader-logo"><img src="./vendors/images/1.png" alt=""></div>
+        <div class='loader-progress' id="progress_div">
+            <div class='bar' id='bar1'></div>
+        </div>
+        <div class='percent' id='percent1'>0%</div>
+        <div class="loading-text">
+            Loading...
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="pd-ltr-20 xs-pd-20-10">
+        <div class="min-height-200px">
+            <div class="html-editor pd-20 card-box mb-30">
+                <h4 class="h4 text-blue">Long Description Field</h4>
+                <p>Please fill code to locate the item on softone</p>
+                <div class="form-group row">
+                    <label class="col-sm-12 col-md-2 col-form-label" for="code">SoftOne Code: </label>
+                    <div class="col-sm-12 col-md-4">
+                        <input class="form-control" type="text" name="code" id="code" value="" placeholder="Enter product code to search...">
+                    </div>
+                    <div class="col-sm-12 col-md-2">
+                        <button class="btn btn-secondary btn-lg disabled" type="submit" name="search_mtrl" id="search_mtrl">Search Mtrl</button>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="message"></span>
+                    </div>
+                </div>
+                <p>
+                    <label for="html"></label>
+                    <textarea class="textarea_editor form-control border-radius-0" placeholder="Enter text ..." name="html" id="html"></textarea>
+                </p>
+                <button class="btn btn-success btn-lg btn-block" type="submit" id="save">Save HTML to Softone</button>
+            </div>
+        </div>
+        <div class="footer-wrap pd-20 mb-20 card-box">
+            Html Editors - By <a href="https://www.rdc.gr/el/normal/home" target="_blank">RDC Informatics</a>
+        </div>
+    </div>
+</div>
+<!-- js -->
+<script src="vendors/scripts/core.js"></script>
+<script src="vendors/scripts/script.min.js"></script>
+<script src="vendors/scripts/process.js"></script>
+<script src="vendors/scripts/layout-settings.js"></script>
+<!-- Load Custom JS -->
+<script src="rdc/js/custom_lib/html.js"></script>
+<script src="rdc/js/jquery_lib/script.js"></script>
+</body>
+</html>

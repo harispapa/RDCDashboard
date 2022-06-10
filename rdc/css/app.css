@@ -2,7 +2,30 @@
     background:#e7ebee;
 }
 
-
 .brand-logo a {
     justify-content: center;
+}
+
+.user-info-dropdown .dropdown-toggle::after{
+    display: none;
+}
+
+.btn.disabled{
+    opacity: 0.15;
+}
+.form-group>label {
+    font-weight: 500;
+    font-size: 18px;
+    padding: 10px 0 0 15px;
+    max-width: 160px;
+}
+.alert-success,.alert-danger {
+    padding: 15px;
+    position: relative;
+    right: 100px;
+    top: 13px;
+}
+
+.custom-file-input, .custom-file-label, .custom-select, .form-control {
+    height: 50px;
 }
