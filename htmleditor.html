@@ -37,31 +37,38 @@
 <div class="container-fluid">
     <div class="pd-ltr-20 xs-pd-20-10">
         <div class="min-height-200px">
-            <div class="html-editor pd-20 card-box mb-30">
-                <h4 class="h4 text-blue">Long Description Field</h4>
-                <p>Please fill code to locate the item on softone</p>
-                <div class="form-group row">
-                    <label class="col-sm-12 col-md-2 col-form-label" for="code">SoftOne Code: </label>
-                    <div class="col-sm-12 col-md-4">
-                        <input class="form-control" type="text" name="code" id="code" value="" placeholder="Enter product code to search...">
+            <div class="pd-20 card-box mb-30">
+                    <p>Please fill code to locate the item on SoftOne</p>
+                    <div class="form-group row">
+                        <label class="col-sm-12 col-md-2 col-form-label" for="code">SoftOne Code: </label>
+                        <div class="col-sm-12 col-md-3">
+                            <input class="form-control" type="text" name="code" id="code" value="" placeholder="Enter product code to search...">
+                        </div>
+                        <div class="col-sm-12 col-md-2">
+                            <button class="btn btn-secondary btn-lg disabled" type="button" name="search_mtrl" id="search_mtrl">Search Mtrl</button>
+                        </div>
+                        <div class="col-md-4">
+                            <span class="message"></span>
+                        </div>
                     </div>
-                    <div class="col-sm-12 col-md-2">
-                        <button class="btn btn-secondary btn-lg disabled" type="submit" name="search_mtrl" id="search_mtrl">Search Mtrl</button>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="message"></span>
-                    </div>
+                <button class="btn btn-success btn-lg btn-block disabled" type="button" id="save">Save HTML to SoftOne</button>
                 </div>
+            <div class="pd-20 card-box mb-30 htmlShort">
+                <h4 class="h4 text-blue">Item Short Description Field</h4>
                 <p>
-                    <label for="html"></label>
-                    <textarea class="textarea_editor form-control border-radius-0" placeholder="Enter text ..." name="html" id="html"></textarea>
+                    <label for="htmlShort"></label>
+                    <textarea class="form-control border-radius-0" placeholder="Enter text ..." name="htmlShort" id="htmlShort"></textarea>
                 </p>
-                <button class="btn btn-success btn-lg btn-block" type="submit" id="save">Save HTML to Softone</button>
+            </div>
+            <div class="pd-20 card-box mb-30 htmlLong">
+                <h4 class="h4 text-blue">Item Long Description Field</h4>
+                <p>
+                    <label for="htmlLong"></label>
+                    <textarea class="form-control border-radius-0" placeholder="Enter text ..." name="htmlLong" id="htmlLong"></textarea>
+                </p>
             </div>
         </div>
-        <div class="footer-wrap pd-20 mb-20 card-box">
-            Html Editors - By <a href="https://www.rdc.gr/el/normal/home" target="_blank">RDC Informatics</a>
-        </div>
+        <div class="footer-wrap pd-20 mb-20 card-box">Html Editors - By <a href="https://www.rdc.gr/el/normal/home" target="_blank">RDC Informatics</a></div>
     </div>
 </div>
 <!-- js -->
