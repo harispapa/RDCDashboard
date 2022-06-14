@@ -29,3 +29,7 @@
 .custom-file-input, .custom-file-label, .custom-select, .form-control {
     height: 50px;
 }
+
+.wysihtml5-sandbox .wysihtml5-editor{
+    color: red;
+}

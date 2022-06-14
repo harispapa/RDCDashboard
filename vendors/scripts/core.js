@@ -12389,8 +12389,8 @@ wysihtml5.dom.replaceWithChildNodes = function(node) {
         "security":           "restricted",
         "allowtransparency":  "true",
         "frameborder":        0,
-        "width":              0,
-        "height":             0,
+        "width":              100,
+        "height":             100,
         "marginwidth":        0,
         "marginheight":       0
       }).on(iframe);
@@ -15265,9 +15265,9 @@ wysihtml5.views.View = Base.extend(
         "body             { min-height: 100%; padding: 0; margin: 0; margin-top: -1px; padding-top: 1px; }",
         "._wysihtml5-temp { display: none; }",
         wysihtml5.browser.isGecko ?
-          "body.placeholder { color: graytext !important; }" : 
-          "body.placeholder { color: #a9a9a9 !important; }",
-        "body[disabled]   { background-color: #eee !important; color: #999 !important; cursor: default !important; }",
+          "body.placeholder { color: black !important; }" :
+          "body.placeholder { color: black !important; }",
+        "body[disabled]   { background-color: red !important; color: #999 !important; cursor: default !important; }",
         // Ensure that user see's broken images and can delete them
         "img:-moz-broken  { -moz-force-broken-image-icon: 1; height: 24px; width: 24px; }"
       ];

@@ -2,14 +2,13 @@ var select = function (elementSelectorCSS, AllElements) {
     elementSelectorCSS.trim();
     return (AllElements) ? document.querySelectorAll(elementSelectorCSS) : document.querySelector(elementSelectorCSS);
 };
-function htmlEntities(str) {
-    return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
-}
-
+// function htmlEntities(str) {
+//     return String(str)
+//         .replace(/&/g, '&amp;')
+//         .replace(/</g, '&lt;')
+//         .replace(/>/g, '&gt;')
+//         .replace(/"/g, '&quot;');
+// }
 (function(global, x){
     var searchMtrlButton  = select('#search_mtrl');
     var saveButton        = select('#save');
@@ -45,7 +44,7 @@ function htmlEntities(str) {
     var updateHTML5Mtrl = function(id, HtmlField, HtmlText ){
         try{
             var sql = "UPDATE Mtrl SET "+ HtmlField +"=:1 WHERE SODTYPE=51 AND COMPANY="+x.SYS.COMPANY+" AND Mtrl="+id+";";
-            x.RUNSQL(sql, htmlEntities(HtmlText));
+            x.RUNSQL(sql, (HtmlText));
             searchMessageArea.textContent = 'Html Field Updated to Mtrl'+id;
             return 1;
         }
@@ -81,9 +80,10 @@ function htmlEntities(str) {
               if (parseInt(productId)>0) {
                   searchMessageArea.classList.add('alert-success');
                   searchMessageArea.textContent = 'Item Located in SoftOne with Mtrl='+productId;
-                  var y = Object.getOwnPropertyNames(Html5LongDescr)[1];
-                  Html5ShortDescr[y].wysihtml5.editor.setValue(getHTML5(productId,'CCC1007ShortDescr'));
-                  Html5LongDescr[y].wysihtml5.editor.setValue(getHTML5(productId,'CCC1007LongDescr'));
+                  var ObjectShort = Object.getOwnPropertyNames(Html5ShortDescr)[1];
+                  Html5ShortDescr[ObjectShort].wysihtml5.editor.setValue(getHTML5(productId,'CCC1007ShortDescr'));
+                  var ObjectLong = Object.getOwnPropertyNames(Html5LongDescr)[1];
+                  Html5LongDescr[ObjectLong].wysihtml5.editor.setValue(getHTML5(productId,'CCC1007LongDescr'));
               }
               else {
                   searchMessageArea.classList.add('alert-danger');
