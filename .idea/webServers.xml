@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="abaa6f74-a96d-4521-9b5c-2143736b1516" name="Localhost" url="http://localhost/learn/dashboard/">
+        <fileTransfer mountedRoot="C:\" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>

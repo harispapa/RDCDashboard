@@ -1,17 +1,16 @@
 .brand-logo{
     background:#e7ebee;
 }
-
 .brand-logo a {
     justify-content: center;
 }
-
 .user-info-dropdown .dropdown-toggle::after{
     display: none;
 }
-
 .btn.disabled{
     opacity: 0.15;
+    cursor: not-allowed;
+    pointer-events: all !important;
 }
 .form-group>label {
     font-weight: 500;
@@ -21,15 +20,22 @@
 }
 .alert-success,.alert-danger {
     padding: 15px;
+    margin-bottom: 20px;
     position: relative;
-    right: 100px;
     top: 13px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 28px rgb(0 0 0 / 8%);
+    box-shadow: 0 0 28px rgb(0 0 0 / 8%);
 }
-
+.alert-disable{
+    display: none;
+}
+.alert-enable{
+    display: block;
+}
 .custom-file-input, .custom-file-label, .custom-select, .form-control {
     height: 50px;
 }
-
 .wysihtml5-sandbox .wysihtml5-editor{
     color: red;
 }

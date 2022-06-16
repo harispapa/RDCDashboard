@@ -13,7 +13,7 @@ var select = function (elementSelectorCSS, AllElements) {
     var searchMtrlButton  = select('#search_mtrl');
     var saveButton        = select('#save');
     var codeField         = select('#code');
-    var searchMessageArea = select('.message');
+    var searchMessageArea = select('.message ');
     var Html5ShortDescr   = select('#htmlShort');
     var Html5LongDescr    = select('#htmlLong');
     var productId         = 0;
@@ -55,6 +55,7 @@ var select = function (elementSelectorCSS, AllElements) {
     };
     var checkCodeField = function (){
         if(codeField.value.length === 0) {
+            searchMessageArea.classList.add('alert-enable');
             searchMessageArea.textContent = 'The code input must not be empty';
             searchMessageArea.classList.add('alert-danger');
             searchMtrlButton.classList.add('disabled');
@@ -64,6 +65,7 @@ var select = function (elementSelectorCSS, AllElements) {
             searchMessageArea.textContent = '';
             searchMessageArea.classList.remove('alert-danger');
             searchMessageArea.classList.remove('alert-success');
+            searchMessageArea.classList.remove('alert-enable');
         } else {
             searchMtrlButton.classList.remove('disabled');
             saveButton.classList.remove('disabled');
@@ -78,6 +80,7 @@ var select = function (elementSelectorCSS, AllElements) {
             if ((codeField.value).trim()){
               productId = getMtrl(codeField.value);
               if (parseInt(productId)>0) {
+                  searchMessageArea.classList.add('alert-enable');
                   searchMessageArea.classList.add('alert-success');
                   searchMessageArea.textContent = 'Item Located in SoftOne with Mtrl='+productId;
                   var ObjectShort = Object.getOwnPropertyNames(Html5ShortDescr)[1];
@@ -86,6 +89,7 @@ var select = function (elementSelectorCSS, AllElements) {
                   Html5LongDescr[ObjectLong].wysihtml5.editor.setValue(getHTML5(productId,'CCC1007LongDescr'));
               }
               else {
+                  searchMessageArea.classList.add('alert-enable');
                   searchMessageArea.classList.add('alert-danger');
                   searchMessageArea.textContent = 'Couldn\'t locate the sku on SoftOne';
               }
@@ -100,6 +104,7 @@ var select = function (elementSelectorCSS, AllElements) {
             evt.preventDefault();
             if (productId === 0){
                 checkCodeField();
+                searchMessageArea.classList.add('alert-enable');
                 searchMessageArea.classList.add('alert-danger');
                 searchMessageArea.textContent = "The Html wasn't saved because sku doesn't exist.";
             }
@@ -107,11 +112,13 @@ var select = function (elementSelectorCSS, AllElements) {
                 var updateShort = updateHTML5Mtrl(productId, 'CCC1007ShortDescr', Html5ShortDescr.value.toString());
                 var updateLong = updateHTML5Mtrl(productId, 'CCC1007LongDescr', Html5LongDescr.value.toString());
                 if (updateShort === 1 || updateLong === 1) {
+                    searchMessageArea.classList.add('alert-enable');
                     searchMessageArea.classList.add('alert-success');
                     searchMessageArea.textContent = "The Html was saved on product's view";
                 }
                 else{
                     checkCodeField();
+                    searchMessageArea.classList.add('alert-enable');
                     searchMessageArea.classList.add('alert-danger');
                     searchMessageArea.textContent = "The Html wasn't saved.";
                 }
